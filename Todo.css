@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://img.freepik.com/premium-photo/list-icon-notebook-with-completed-todo-list-3d-render_471402-428.jpg");
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; 
+    margin: 0;
+    padding: 0;
+}
+ .day{
+   margin: -150px auto;
+   float: left;
+   padding-left: 300px;
+ }
+
+.container {
+    max-width: 600px;
+    margin: 200px auto;
+    margin-left: 100px;
+    background-color: rgb(173, 230, 227);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #087a6f;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-color: rgb(8, 202, 202);
+}
+
+button {
+    padding: 10px;
+    background-color: #0c9587;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+button i {
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #a6e7f3;
+}
+footer{
+    margin-top: 20px;
+    width: 1480px;
+    position:absolute;
+    background-color:#087a6f;
+    padding: 20px;
+    height: 50px;
+}
+p{
+    display: block;
+    color:  #a6e7f3; 
+    font-size: small;
+    text-align: center;
+    padding-left: 80px;
+    padding: 4px;
+}
