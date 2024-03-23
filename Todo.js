@@ -1,20 +1,3 @@
-var h1 = document.getElementById("h1");
-var h2 = document.getElementById("h2");
-var date = new Date();
-var day = date.getDay();
-var time = date.getTime();
-
-
-var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-var dayName = daysOfWeek[day];
-var monthName = monthsOfYear[date.getMonth()];
-
-h1.innerHTML = dayName;
-h2.innerHTML = monthName + ' ' + date.getDate(); 
-
-
 function addTodo() {
     var todoInput = document.getElementById('todoInput');
     var todoList = document.getElementById('todoList');
@@ -23,7 +6,6 @@ function addTodo() {
         alert('Please enter a task!');
         return;
     }
-    
     
     var li = document.createElement('li');
    
@@ -36,7 +18,6 @@ function addTodo() {
     input.style.display = 'none'; 
     li.appendChild(input);
     
-   
     var editButton = document.createElement('button');
     editButton.textContent = '✏️';
     editButton.onclick = function() {
@@ -48,7 +29,6 @@ function addTodo() {
     };
     li.appendChild(editButton);
     
-   
     var saveButton = document.createElement('button');
     saveButton.textContent = 'Save';
     saveButton.style.display = 'none'; 
@@ -62,18 +42,13 @@ function addTodo() {
     };
     li.appendChild(saveButton);
     
-    
     var doneButton = document.createElement('button');
-    doneButton.textContent = '✔️';
-    doneButton.style.display = 'none'; 
+    doneButton.textContent = 'Complete';
     doneButton.onclick = function() {
-        todoList.appendChild(li); 
-        span.style.display = 'inline-block'; 
-        doneButton.style.display = 'none'; 
-        editButton.style.display = 'inline-block'; 
+        span.style.textDecoration = 'line-through'; // Apply line-through style
+        doneButton.disabled = true; // Disable the complete button after completion
     };
     li.appendChild(doneButton);
-    
     
     var deleteButton = document.createElement('button');
     deleteButton.innerHTML = '❌';
@@ -82,10 +57,8 @@ function addTodo() {
     };
     li.appendChild(deleteButton);
     
-
     li.style.listStyle = 'none'; 
     li.style.margin = '5px 0'; 
-    
     
     todoList.appendChild(li);
     
