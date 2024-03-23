@@ -1,3 +1,34 @@
+
+ var h1 = document.querySelector("h1");
+ var h2 = document.querySelector("h2");
+function displayDateTime() {
+    var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var currentDate = new Date();
+    
+    var day = daysOfWeek[currentDate.getDay()];
+    var date = currentDate.getDate();
+    var month = currentDate.getMonth() + 1; 
+    var year = currentDate.getFullYear();
+    
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+    var seconds = currentDate.getSeconds();
+    
+    
+    month = month < 10 ? '0' + month : month;
+    date = date < 10 ? '0' + date : date;
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    var amOrPm = hours >= 12 ? 'PM' : 'AM';
+   h1.innerHTML = day + ', ' + date + '/' + month + '/' + year 
+   h2.innerHTML= hours + ':' + minutes + ' '+ amOrPm ;
+    
+    console.log(formattedDateTime);
+  }
+  
+  displayDateTime();
+
 function addTodo() {
     var todoInput = document.getElementById('todoInput');
     var todoList = document.getElementById('todoList');
@@ -45,8 +76,8 @@ function addTodo() {
     var doneButton = document.createElement('button');
     doneButton.textContent = 'Complete';
     doneButton.onclick = function() {
-        span.style.textDecoration = 'line-through'; // Apply line-through style
-        doneButton.disabled = true; // Disable the complete button after completion
+        span.style.textDecoration = 'line-through'; 
+        doneButton.disabled = true; 
     };
     li.appendChild(doneButton);
     
